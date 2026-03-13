@@ -51,3 +51,26 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
+// Schedule expand/collapse controls
+const schedule = document.querySelector('#schedule');
+if (schedule) {
+    const sessionDetails = Array.from(schedule.querySelectorAll('details.schedule-session'));
+    const expandAllBtn = schedule.querySelector('#schedule-expand-all');
+    const collapseAllBtn = schedule.querySelector('#schedule-collapse-all');
+
+    // Ensure default expanded even if HTML is edited later
+    sessionDetails.forEach(d => { d.open = true; });
+
+    if (expandAllBtn) {
+        expandAllBtn.addEventListener('click', () => {
+            sessionDetails.forEach(d => { d.open = true; });
+        });
+    }
+
+    if (collapseAllBtn) {
+        collapseAllBtn.addEventListener('click', () => {
+            sessionDetails.forEach(d => { d.open = false; });
+        });
+    }
+}
+

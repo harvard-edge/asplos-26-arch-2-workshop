@@ -268,6 +268,156 @@ strong {
     margin-bottom: var(--spacing-md);
 }
 
+/* -------------------------------------------
+   SCHEDULE SECTION
+   ------------------------------------------- */
+.schedule-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.schedule-intro {
+    font-size: 1.05rem;
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.schedule-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.schedule-actions .btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+}
+
+.schedule-actions .btn:not(.btn-primary) {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    color: var(--color-gray-700);
+}
+
+.schedule-actions .btn:not(.btn-primary):hover {
+    border-color: var(--color-gray-300);
+    transform: translateY(-1px);
+}
+
+.schedule-table {
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-gray-200);
+    background: var(--color-white);
+    overflow: hidden;
+    margin-bottom: var(--spacing-xl);
+}
+
+.schedule-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    padding: var(--spacing-sm) var(--spacing-md);
+    align-items: flex-start;
+    row-gap: var(--spacing-xs);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.schedule-row:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--color-gray-500);
+}
+
+.schedule-event {
+    font-size: 0.98rem;
+    color: var(--color-gray-800);
+}
+
+.schedule-session {
+    background: var(--color-white);
+}
+
+.schedule-session[open] {
+    background: var(--color-gray-50);
+}
+
+details.schedule-session {
+    padding: 0;
+    display: block; /* override .schedule-row grid for details container */
+}
+
+details.schedule-session > summary {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    align-items: flex-start;
+    row-gap: var(--spacing-xs);
+    cursor: pointer;
+    list-style: none;
+}
+
+details.schedule-session > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.schedule-session > summary::after {
+    content: '▸';
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    align-self: center;
+    margin-left: var(--spacing-sm);
+    transform: rotate(0deg);
+    transition: transform var(--transition-fast);
+}
+
+details.schedule-session[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+.schedule-talk-list {
+    list-style: none;
+    padding: 0 var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+    margin: 0;
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.schedule-talk-item {
+    padding: var(--spacing-xs) 0;
+}
+
+.schedule-talk-title {
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.schedule-talk-title:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+.schedule-talk-meta {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-gray-500);
+    margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+    .schedule-row {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+    }
+
+    .schedule-time {
+        font-weight: 600;
+    }
+}
+
 .about-workshop-parts {
     font-size: 1rem;
     color: var(--color-gray-700);
