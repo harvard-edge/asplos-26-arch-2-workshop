@@ -590,6 +590,32 @@ details.schedule-session[open] > summary::after {
     margin-left: var(--spacing-sm);
 }
 
+.comp-card-winners {
+    text-align: center;
+}
+
+.comp-card ul.comp-winners-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    color: var(--color-gray-700);
+}
+
+.comp-card .comp-winners-list li {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+    padding-left: 0;
+}
+
+.comp-winners-medal {
+    flex-shrink: 0;
+    font-size: 1.15em;
+    line-height: 1;
+}
+
 .comp-card li {
     padding: var(--spacing-xs) 0;
     padding-left: var(--spacing-sm);
